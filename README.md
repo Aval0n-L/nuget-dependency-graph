@@ -233,12 +233,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **Mermaid** - For beautiful diagram syntax and rendering
 - **.NET Community** - For comprehensive tooling and ecosystem
 
-## 📞 Support
-
-- 🐛 **Issues**: [GitHub Issues](https://github.com/yourusername/nuget-dependency-analyzer/issues)
-- 💡 **Feature Requests**: [GitHub Discussions](https://github.com/yourusername/nuget-dependency-analyzer/discussions)
-- 📚 **Documentation**: [Wiki](https://github.com/yourusername/nuget-dependency-analyzer/wiki)
-
 ---
 
 ⭐ **Star this repo** if it helps you visualize your project dependencies!
