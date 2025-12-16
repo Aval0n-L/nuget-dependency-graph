@@ -26,20 +26,20 @@ A powerful .NET console tool that analyzes and visualizes NuGet package dependen
 
 ### Installation
 
-1. Clone the repository:
+Install as a global .NET tool from NuGet:
+
 ```bash
-git clone https://github.com/yourusername/nuget-dependency-analyzer.git
-cd nuget-dependency-analyzer
+dotnet tool install -g NugetDependencyGraph
 ```
 
-2. Build the project:
+To update to the latest version:
 ```bash
-dotnet build
+dotnet tool update -g NugetDependencyGraph
 ```
 
-3. Run the analyzer:
+To uninstall:
 ```bash
-dotnet run
+dotnet tool uninstall -g NugetDependencyGraph
 ```
 
 ## 📖 Usage
@@ -47,42 +47,42 @@ dotnet run
 ### Interactive Mode
 Simply run without arguments for interactive mode:
 ```bash
-dotnet run
+ngraph
 ```
 
 ### Command Line Mode
 ```bash
 # Analyze current project
-dotnet run "."
+ngraph .
 
 # Analyze specific project
-dotnet run "C:\Path\To\MyProject.csproj"
+ngraph "C:\Path\To\MyProject.csproj"
 
 # Generate Mermaid format
-dotnet run "." "--mermaid"
+ngraph . --mermaid
 
 # Specify target framework
-dotnet run "." "--tfm" "net8.0"
+ngraph . --tfm net8.0
 
 # Custom output file
-dotnet run "." "--out" "my-dependencies.dot"
+ngraph . --out my-dependencies.dot
 ```
 
 ### Usage Examples
 
 **Analyze a project folder:**
 ```bash
-dotnet run "C:\MyProjects\WebApp"
+ngraph "C:\MyProjects\WebApp"
 ```
 
 **Generate Mermaid diagram:**
 ```bash
-dotnet run "C:\MyProjects\WebApp" "--mermaid"
+ngraph "C:\MyProjects\WebApp" --mermaid
 ```
 
 **Target specific framework:**
 ```bash
-dotnet run "MyProject.csproj" "--tfm=net8.0"
+ngraph MyProject.csproj --tfm=net8.0
 ```
 
 ## 📊 Output Formats
@@ -143,9 +143,9 @@ SolutionRoot/
 ### Target Framework Filtering
 Focus on specific frameworks:
 ```bash
-dotnet run "." "--tfm=net8.0"     # .NET 8
-dotnet run "." "--tfm=net6.0"     # .NET 6
-dotnet run "." "--tfm=netstandard2.0"  # .NET Standard
+ngraph . --tfm=net8.0           # .NET 8
+ngraph . --tfm=net6.0           # .NET 6
+ngraph . --tfm=netstandard2.0   # .NET Standard
 ```
 
 ### Multi-Project Analysis
@@ -159,7 +159,7 @@ Automatically discovers and maps project references:
 
 ### Help Command
 ```bash
-dotnet run help
+ngraph help
 ```
 
 ### Interactive Commands

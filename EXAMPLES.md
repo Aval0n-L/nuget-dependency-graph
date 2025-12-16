@@ -6,7 +6,7 @@ This document provides comprehensive examples of using the NuGet Dependency Grap
 
 ### Example 1: Analyze Current Directory
 ```bash
-dotnet run "."
+ngraph .
 ```
 
 **Expected Output:**
@@ -49,7 +49,7 @@ digraph NuGetDeps {
 
 ### Example 2: Generate Mermaid Format
 ```bash
-dotnet run "." "--mermaid"
+ngraph . --mermaid
 ```
 
 **Generated Mermaid File:**
@@ -66,7 +66,7 @@ graph LR
 
 ### Example 3: Target Specific Framework
 ```bash
-dotnet run "MyProject.csproj" "--tfm=net6.0"
+ngraph MyProject.csproj --tfm=net6.0
 ```
 
 **Output:**
@@ -99,7 +99,7 @@ MySolution/
 
 **Command:**
 ```bash
-dotnet run "MySolution/WebApp"
+ngraph "MySolution/WebApp"
 ```
 
 **Generated Graph Structure:**
@@ -169,7 +169,7 @@ graph LR
 
 ### Example 8: Interactive Session
 ```bash
-dotnet run
+ngraph
 ```
 
 **Interactive Session:**
@@ -220,7 +220,7 @@ Goodbye! 👋
 
 **Command:**
 ```bash
-dotnet run "Enterprise.WebApp" "--out" "security-audit.dot"
+ngraph "Enterprise.WebApp" --out security-audit.dot
 ```
 
 **Use case:** Generate comprehensive dependency map for security team review, identifying all third-party packages and their versions.
@@ -230,7 +230,7 @@ dotnet run "Enterprise.WebApp" "--out" "security-audit.dot"
 
 **Command:**
 ```bash
-dotnet run "Microservices.sln" "--mermaid"
+ngraph Microservices.sln --mermaid
 ```
 
 **Use case:** Generate Mermaid diagrams for GitHub README files, architectural decision records (ADRs), and technical documentation.
@@ -240,7 +240,7 @@ dotnet run "Microservices.sln" "--mermaid"
 
 **Command:**
 ```bash
-dotnet run "${{ github.workspace }}" "--out" "artifacts/dependencies.dot"
+ngraph "${{ github.workspace }}" --out artifacts/dependencies.dot
 ```
 
 **Use case:** Generate dependency graphs as build artifacts, track dependency changes over time, and integrate with automated security scanning.
@@ -258,7 +258,7 @@ dotnet run "${{ github.workspace }}" "--out" "artifacts/dependencies.dot"
 ```bash
 # Run restore first
 dotnet restore MyProject
-dotnet run "MyProject"
+ngraph "MyProject"
 ```
 
 ### Example 13: Graphviz Not Found
@@ -279,7 +279,7 @@ dotnet run "MyProject"
 **Solution:**
 ```bash
 # Check available frameworks first
-dotnet run "MyProject" "--tfm=net8.0"
+ngraph MyProject --tfm=net8.0
 ```
 
 ## 📈 Performance Examples
@@ -297,7 +297,7 @@ Memory usage: ~150MB peak
 
 **Optimization tip:** Use specific TFM filtering for faster analysis:
 ```bash
-dotnet run "LargeSolution" "--tfm=net8.0"
+ngraph LargeSolution --tfm=net8.0
 ```
 
 ---
